@@ -33,20 +33,38 @@
 
 <!-- javascript -->
     <script>
-   let hr = document.querySelector('#hr');
-     let min = document.querySelector('#min');
-     let sec = document.querySelector('#sec');
+        setInterval(()=>{
+            d = new Date();
+            htime = d.getHours();
+            mtime = d.getMinutes();  
+            stime = d.getSeconds();
 
-     setInterval(()=>{
-        let day = new Date();
-     let hh = day.getHours() * 30;
-     let mm = day.getMinutes() * 6;
-     let ss = day.getSeconds() * 6;
+            hrotation = 30*htime + mtime/2;
+            mrotation =6*mtime;
+            srotation = 6*stime;
 
-     hr.style.transform = `rotate(${hh+(mm/12)}deg)`;
-     min.style.transform = `rotate(${mm}deg)`;
-     sec.style.transform = `rotate(${ss}deg)`;
-     })
+         hr.style.transform = `rotate(${hrotation}deg)`;
+         min.style.transform = `rotate(${mrotation}deg)`;
+         sec.style.transform = `rotate(${srotation}deg)`;
+           },1000)
+
+         
+// or use this 
+
+
+//    let hr = document.querySelector('#hr');
+//      let min = document.querySelector('#min');
+//      let sec = document.querySelector('#sec');
+    //  setInterval(()=>{
+    //     let day = new Date();
+    //  let hh = day.getHours() * 30;
+    //  let mm = day.getMinutes() * 6;
+    //  let ss = day.getSeconds() * 6;
+
+    //  hr.style.transform = `rotate(${hh+(mm/12)}deg)`;
+    //  min.style.transform = `rotate(${mm}deg)`;
+    //  sec.style.transform = `rotate(${ss}deg)`;
+    //  })
     </script>
 </body>
 </html>
